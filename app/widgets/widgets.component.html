@@ -1,0 +1,10 @@
+<div class="widgets">
+  <h1>{{text}}</h1>
+  
+  <button (click)="handleClick()">Click</button>
+  <button [disabled]="isDisabled">Toggle</button>
+
+  <ul>
+    <li *ngFor="#num of nums">{{num}}</li>
+  </ul>
+</div>

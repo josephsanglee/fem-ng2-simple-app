@@ -1,10 +1,16 @@
 <div class="widgets">
-  <h1>{{text}}</h1>
-  
+  <h1>{{inputVal}}</h1>
+
+  <input [(ngModel)]="inputVal" placeholder="placeholder">
+
+  <br><br>
   <button (click)="handleClick()">Click</button>
   <button [disabled]="isDisabled">Toggle</button>
 
-  <ul>
+<!--   <ul>
     <li *ngFor="#num of nums">{{num}}</li>
-  </ul>
+  </ul> -->
+
+  <br><br>
+  <div *ngFor="#widget of widgets">{{widget.name}} at ${{widget.price}}</div>
 </div>

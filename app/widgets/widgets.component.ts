@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {WidgetsService} from '../common/widgets.service';
 
 @Component({
   selector: 'widgets',
@@ -8,9 +9,15 @@ import {Component} from '@angular/core';
 
 export class WidgetsComponent {
   text: string = 'hello';
+  inputVal: string ='';
   isDisabled: boolean = false;
-  nums = [1, 2, 3];
+  nums: number[] = [1, 2, 3];
+  widgets: any[] = [];
 
+  //defaults to public if private isn't specified
+  constructor(WidgetsService: WidgetsService) {
+    this.widgets = WidgetsService.widgets;
+  }
   handleClick() {
     this.isDisabled = !this.isDisabled;
   }
